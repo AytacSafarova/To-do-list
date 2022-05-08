@@ -113,18 +113,60 @@ button5.addEventListener("click", function (event) {
 
 //sort
 button3.addEventListener("click", function (event) {
-  let newarr = listArr.sort();
+  listArr.forEach(item=>{
+ let regem=parseInt(item, 10)
+ console.log(isNaN(regem))
+
+ if(isNaN(regem)==false){
+ let newarr= listArr.sort(function(a, b) {
+  return a - b;
+});
+
   let p = document.querySelectorAll("p");
   p.forEach((item, index) => {
     item.innerText = newarr[index];
-  });
+  })}
+
+  else{
+
+    let newarr= listArr.sort()
+    
+      let p = document.querySelectorAll("p");
+      p.forEach((item, index) => {
+        item.innerText = newarr[index];
+      })
+
+
+    
+  }  })
 });
 
 button4.addEventListener("click", function (event) {
-  let newarr = listArr.sort();
-  let newarr2 = newarr.reverse();
+  listArr.forEach(item=>{
+ let regem=parseInt(item, 10)
+
+ if(isNaN(regem)==false){
+ let newarr= listArr.sort(function(a, b) {
+  return a - b;
+});
+let reverse1=newarr.reverse()
+
   let p = document.querySelectorAll("p");
   p.forEach((item, index) => {
-    item.innerText = newarr2[index];
-  });
+    item.innerText = reverse1[index];
+  })}
+
+  else{
+
+    let newarr= listArr.sort()
+    let reverse2=newarr.reverse()
+
+      let p = document.querySelectorAll("p");
+      p.forEach((item, index) => {
+        item.innerText = reverse2[index];
+      })
+
+
+    
+  }  })
 });
